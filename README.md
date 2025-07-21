@@ -23,6 +23,7 @@ HTML5, CSS3, JavaScript
 Web Speech API – for voice recognition and synthesis
 LocalStorage – for user data
 OpenAI GPT (optional) – for dynamic AI answers
+
 📦 Project Structure
 
 ├── index.html        # Main HTML file

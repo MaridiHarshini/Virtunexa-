@@ -1,101 +1,48 @@
-inventory = []
+InterviewAce – AI Interview Coach 🧠💬
 
-def main_menu():
-    while True:
-        print("\n=== Welcome to the Python Adventure App ===")
-        print("1. Play Adventure Game")
-        print("2. Use Calculator")
-        print("3. Exit")
-        choice = input("Choose an option (1/2/3): ").strip()
+InterviewAce is a web-based application that helps users prepare for interviews across multiple roles like Frontend, Backend, Full Stack, Data Analyst, DevOps, and Product Management.
 
-        if choice == "1":
-            play_game()
-        elif choice == "2":
-            calculator()
-        elif choice == "3":
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please enter 1, 2, or 3.")
+It includes:
 
+Role-based static question sets 🎯
+Voice input using Web Speech API 🎙️
+Text-to-speech answers 🔊
+OpenAI GPT integration (optional) 🤖
+Light/Dark mode toggle 🌙☀️
+Login/Register system (LocalStorage based) 🔐
+🚀 Features
+🔐 User Authentication (Login/Register)
+🧩 Role-Based Questions – Tailored interview questions for different domains
+🎙️ Voice Input & Output – Speak and listen to answers
+💬 Chat Interface – Simulates AI chat interaction
+🧠 OpenAI API Support – Optional GPT integration for dynamic answers
+🎨 Responsive Design – Works on mobile and desktop
+🌗 Theme Toggle – Switch between light and dark modes
+🛠️ Technologies Used
+HTML5, CSS3, JavaScript
+Web Speech API – for voice recognition and synthesis
+LocalStorage – for user data
+OpenAI GPT (optional) – for dynamic AI answers
+📦 Project Structure
 
-def play_game():
-    global inventory
-    inventory = []
-    print("\nYou wake up in a mysterious forest.")
-    print("There is a path to your LEFT and RIGHT.")
-    while True:
-        choice = input("Which way do you go? (left/right): ").strip().lower()
-        if choice in ['left', 'l']:
-            left_path()
-            break
-        elif choice in ['right', 'r']:
-            right_path()
-            break
-        else:
-            print("Invalid choice. Please type 'left' or 'right'.")
+├── index.html        # Main HTML file
+├── styles.css        # Styling (theme, layout, chat UI)
+├── script.js           # Core logic, AI integration, voice functions
 
-def left_path():
-    global inventory
-    print("\nYou find a shiny sword on the ground and pick it up.")
-    inventory.append("sword")
-    print("Inventory:", inventory)
-    encounter_troll()
+🤖 Optional: OpenAI Integration
 
-def right_path():
-    print("\nYou stumble upon a peaceful lake and rest there.")
-    encounter_troll()
+To use Gemini-based answers:
 
-def encounter_troll():
-    print("\nA wild troll appears!")
-    if "sword" in inventory:
-        print("You use your sword to fight the troll and win!")
-    else:
-        print("You have no weapon. The troll defeats you.")
-    play_again()
+Go to https://platform.openai.com
+Create an account and get your API key
+Enter the API key on the role selection screen in the input box
+Then start chatting with dynamic AI responses
+If you don't enter a key, static mock questions will be used instead.
 
-def play_again():
-    while True:
-        again = input("Play again? (yes/no): ").strip().lower()
-        if again == 'yes':
-            play_game()
-            break
-        elif again == 'no':
-            print("Returning to main menu.")
-            break
-        else:
-            print("Please enter 'yes' or 'no'.")
+🧪 How to Run
+Just open the index.html file in your browser:
 
-
-def calculator():
-    print("\n=== Calculator ===")
-    try:
-        num1 = float(input("Enter first number: "))
-        op = input("Enter operation (+, -, *, /): ").strip()
-        num2 = float(input("Enter second number: "))
-
-        if op == '+':
-            res = num1 + num2
-        elif op == '-':
-            res = num1 - num2
-        elif op == '*':
-            res = num1 * num2
-        elif op == '/':
-            if num2 == 0:
-                print("Error: Cannot divide by zero.")
-                return
-            res = num1 / num2
-        else:
-            print("Invalid operation.")
-            return
-
-        print("Result:", res)
-        
-        with open("calc_history.txt", "a") as f:
-            f.write(f"{num1} {op} {num2} = {res}\n")
-
-    except ValueError:
-        print("Invalid input. Please enter numeric values.")
-
-if __name__ == "__main__":
-    main_menu()
+# No installation required
+# Simply double-click or use Live Server in VS Code
+📄 License
+This project is licensed for educational use. Feel free to fork and build on top of it!
